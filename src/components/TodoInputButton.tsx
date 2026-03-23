@@ -1,10 +1,9 @@
-type onInputButtonProps = {
-    onInput : ()=> void;
+type TodoInputProps = {
+  onInputButton: ()=> void;
 }
-
-export function TodoInputButton( onInputButton : onInputButtonProps ){
-    const onClickHandler = onInputButton.onInput;
-    return(
-        <button onClick={onClickHandler}>add</button>
-    );
+export function TodoInputButton(props: TodoInputProps){
+  const onInputButton = props.onInputButton;
+  return(
+    <button onClick={onInputButton}>追加</button>
+  );
 }
