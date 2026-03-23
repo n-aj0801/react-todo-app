@@ -5,13 +5,19 @@ import { TodoList } from './components/TodoList';
 
  function App() {
   const [todoItems, setTodoItems ] = useState<Todo[]>([]);
-  const inputTodoItem = (todoItem:Todo)=>{
-    setTodoItems([...todoItems,todoItem]);
+  const addTodo = (todoValue:string)=>{
+    const newTodo:Todo = {
+        id:todoItems.length,
+        text:todoValue,
+        completed:false
+    }
+    setTodoItems([...todoItems,newTodo]);
   }
+
   return (
     <div>
       <h1>Todoリスト</h1>
-      <TodoInput onInputButton={(todoItem)=>inputTodoItem(todoItem)}/>
+      <TodoInput onInputButton={(todoValue:string)=>addTodo(todoValue)}/>
       <TodoList todoItems={todoItems} />
     </div>
   );
