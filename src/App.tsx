@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { TodoInput } from './components/TodoInput';
 import { TodoList } from './components/TodoList';
 
- function App() {
+function App() {
   const [todoItems, setTodoItems ] = useState<Todo[]>([]);
   const addTodo = (todoValue:string)=>{
     const newTodo:Todo = {
@@ -25,7 +25,6 @@ import { TodoList } from './components/TodoList';
     = todoItems.map((todoItem)=>{
       if(todoItem.id === todoId){ 
         return{...todoItem, completed: !todoItem.completed};
-        return todoItem;
       }
       return todoItem;
     });
