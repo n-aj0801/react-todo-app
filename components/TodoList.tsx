@@ -1,6 +1,7 @@
 import type { Todo } from "../types/todo";
 import { DeleteButton } from "./DeleteButton";
 import { useState } from "react";
+import { createClient } from '../lib/supabase/client';
 
 type TodoListProps = {
   todoItems: Todo[];
